@@ -46,10 +46,10 @@ Enhancements are always welcome! You can suggest new features or improvements by
 To contribute code to the project:
 
 1. Fork the repository.
-2. Create a new branch from `main` for your feature (`git checkout -b feature/new-feature`).
+2. Create a new branch from `dev` for your feature.
 3. Implement your feature or fix the bug.
 4. Commit your changes (follow the [commit message guidelines](#commit-message-guidelines)).
-5. Push your branch to your forked repository (`git push origin feature/new-feature`).
+5. Push your branch to your forked repository.
 6. Open a pull request to the main repository.
    
 Make sure that your code follows the [code style](#code-style) guidelines.
@@ -72,14 +72,14 @@ When submitting a pull request (PR):
 The project follows a modular structure, where different submodules handle specific functionalities. Here are the main directories you will encounter:
 
 - **`core/`**: This submodule contains framework-specific code (currently TensorFlow and PyTorch). Any framework-specific logic should reside here.
-- **`attacks/`**: This submodule is framework-independent and should not contain any TensorFlow, PyTorch, JAX, or NumPy-specific logic. If you need additional functionality for a specific framework, include it in the `core` submodule.
+- **`attacks/`**: This submodule is framework-independent and should not contain any TensorFlow, PyTorch, JAX specific logic. If you need additional functionality for a specific framework, include it in the `core` submodule.
 
 ### Framework-Specific Code
 
 The project currently supports **TensorFlow** and **PyTorch**, and is designed to support **JAX** and **NumPy** in the future. If you're adding support for a specific framework or extending functionality:
 
 - Any **framework-specific code** must be added under the `core/` submodule.
-  - For example, if you're adding support for a new optimizer or loss function in TensorFlow or PyTorch, it must go under the `core/` module for the respective framework.
+  - For example, if you're adding support for a new optimizer or loss function in TensorFlow or PyTorch, it must go under the `core/` module..
 - The `attacks/` submodule must remain **completely framework-independent**. If an attack requires framework-specific features, abstract those features into the `core/` submodule.
 - If you're unsure where a piece of code should go, refer to existing patterns in the codebase, or ask for clarification in an issue or pull request.
 
